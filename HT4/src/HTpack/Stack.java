@@ -9,6 +9,6 @@ package HTpack;
  *
  * @author anahernandez
  */
-public interface Pila {
+public abstract class Stack {
     
 }
