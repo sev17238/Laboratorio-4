@@ -9,6 +9,6 @@ package HTpack;
  *
  * @author Ana Lucía Hernández (17138) Diego Sevilla (17238)
  */
-public interface iLista {
+public interface iLista<E> {
     
 }

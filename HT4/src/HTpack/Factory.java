@@ -9,6 +9,12 @@ package HTpack;
  *
  * @author ana Lucía Hernandez (17138). Diego Sevilla (17238).
  */
-public class Factory {
-    
+class Factory<E> {
+//selecciona la implementacion a utilizar para un stack
+//se utiliza el patron Factory
+   /**public iPila<E> getStack(String entry, String entryLista) {
+    // seleccion de la implementacion a utilizar:
+        if (entry.equals("Vector"))
+      return new StackVector<>(); //regresa Vector
+   }**/
 }
