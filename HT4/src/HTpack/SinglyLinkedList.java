@@ -17,12 +17,14 @@ public class SinglyLinkedList<E> extends abstractList<E>{
       count = 0;
    }
    
+   @Override
    public int size()
    // post: returns number of elements in list
   {
     return count;
   }
   
+   @Override
   public void addFirst(E value)
   // post: value is added to beginning of list
   {
@@ -32,6 +34,7 @@ public class SinglyLinkedList<E> extends abstractList<E>{
      count++;
   }
   
+   @Override
   public E removeFirst()
   // pre: list is not empty
   // post: removes and returns value from beginning of list
@@ -42,6 +45,7 @@ public class SinglyLinkedList<E> extends abstractList<E>{
      return temp.value();
   }
   
+   @Override
   public E getFirst()
   // pre: list is not empty
   // post: returns first value in list
@@ -49,6 +53,7 @@ public class SinglyLinkedList<E> extends abstractList<E>{
       return head.value();
   }
   
+   @Override
   public void addLast(E value)
   // post: adds value to end of list
   {
@@ -71,15 +76,14 @@ public class SinglyLinkedList<E> extends abstractList<E>{
    }
    
    
+   @Override
    public boolean contains(E value)
    // pre: value is not null
    // post: returns true iff value is found in list
   {
       Node<E> finger = head;
 	  
-      while (finger != null &&
-             !finger.value().equals(value))
-     {
+      while (finger != null &&!finger.value().equals(value)){
           finger = finger.next();
       }
       return finger != null;

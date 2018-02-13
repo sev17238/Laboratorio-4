@@ -13,9 +13,6 @@ public interface List<E> {
    public boolean isEmpty();
    // post: returns true iff list has no elements
 
-   public void clear();
-   // post: empties list
-
    public void addFirst(E value);
    // post: value is added to beginning of list
 
@@ -25,23 +22,32 @@ public interface List<E> {
    public E getFirst();
    // pre: list is not empty
    // post: returns first value in list
-
-   public E getLast();
-   // pre: list is not empty
-   // post: returns last value in list
-
+   
    public E removeFirst();
    // pre: list is not empty
    // post: removes first value from list
 
    public E removeLast();
    // pre: list is not empty
-   // post: removes last value from list
-
+   // post: removes last value from list   
+  
+   public boolean contains(E value);
+   // pre: value is not null
+   // post: returns true iff list contains an object equal to value
+   
+   
+/*   
+   public E getLast();
+   // pre: list is not empty
+   // post: returns last value in list
+   
    public E remove(E value);
    // post: removes and returns element equal to value
    // otherwise returns null
-
+   
+   public void clear();
+   // post: empties list
+ 
    public void add(E value);
    // post: value is added to tail of list
 
@@ -51,17 +57,13 @@ public interface List<E> {
 
    public E get();
    // pre: list has at least one element
-   // post: returns last value found in list
-
-   public boolean contains(E value);
-   // pre: value is not null
-   // post: returns true iff list contains an object equal to value
-
+   // post: returns last value found in list  
+*/
    public int indexOf(E value);
    // pre: value is not null
    // post: returns (0-origin) index of value,
    // or -1 if value is not found
-
+/*
    public int lastIndexOf(E value);
    // pre: value is not null
    // post: returns (0-origin) index of value,
@@ -84,8 +86,8 @@ public interface List<E> {
    // pre: 0 <= i < size()
    // post: removes and returns object found at that location
 
-  //public Iterator<E> iterator();
+  public Iterator<E> iterator();
    // post: returns an iterator allowing
-   // ordered traversal of elements in list
+   // ordered traversal of elements in list*/
 }
 
