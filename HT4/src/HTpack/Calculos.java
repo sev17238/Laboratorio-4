@@ -11,7 +11,7 @@ public class Calculos {
     private StackVector<Double> sv;
     
     /**
-     * Constructor de la clase
+     * Constructor clase calculos
      */
     public Calculos()
     {

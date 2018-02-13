@@ -6,7 +6,7 @@ package HTpack;
  * @author SDiego
  */
 public class Node<E>{
-   protected E data; // value stored in this element
+   private E data; // value stored in this element
    protected Node<E> nextElement; // ref to next
 
    public Node(E v, Node<E> next)

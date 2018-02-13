@@ -5,7 +5,7 @@ package HTpack;
  *
  * @author SDiego
  */
-public class SinglyLinkedList<E> extends abstractList<E>{
+public class SinglyLinkedList<E> extends AbstractList<E>{
 
    protected int count; // list size
    protected Node<E> head; // ref. to first element
@@ -65,7 +65,7 @@ public class SinglyLinkedList<E> extends abstractList<E>{
          Node<E> finger = head;
          while (finger.next() != null)
          {
-                finger = finger.next();
+            finger = finger.next();
          }
 		 
          finger.setNext(temp);
@@ -88,5 +88,15 @@ public class SinglyLinkedList<E> extends abstractList<E>{
       }
       return finger != null;
    }
+
+    @Override
+    public E removeLast() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int indexOf(E value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }

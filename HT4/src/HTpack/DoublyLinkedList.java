@@ -5,7 +5,7 @@ package HTpack;
  *
  * @author SDiego
  */
-public class DoublyLinkedList<E> extends abstractList<E>{
+public class DoublyLinkedList<E> extends AbstractList<E>{
 protected int count;
 protected DoublyLinkedNode<E> head;
 protected DoublyLinkedNode<E> tail;
@@ -82,4 +82,19 @@ return -1;
 return i;
 }
 }
+
+    @Override
+    public E getFirst() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public E removeFirst() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int indexOf(E value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

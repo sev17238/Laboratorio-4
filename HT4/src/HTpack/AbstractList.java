@@ -5,12 +5,11 @@ package HTpack;
  *
  * @author SDiego
  */
-public abstract class abstractList<E>implements List<E>{
-    private int size;
-   public abstractList()
+public abstract class AbstractList<E>implements List<E>{
+    protected int size;
+   public AbstractList()
    // post: does nothing
    {
-       size = 0;
    }
 
    @Override
@@ -32,5 +31,6 @@ public abstract class abstractList<E>implements List<E>{
     public int size(){
       return size;
   }
+    
   
 }

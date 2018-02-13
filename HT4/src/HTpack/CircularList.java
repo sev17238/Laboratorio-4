@@ -5,10 +5,10 @@ package HTpack;
  *
  * @author SDiego
  */
-public class CircularList<E> extends abstractList<E>{
+public class CircularList<E> extends AbstractList<E>{
 
-protected Node<E> tail; 
-protected int count;
+private Node<E> tail; 
+private int count;
 
 public CircularList()
 // pre: constructs a new circular list
@@ -68,4 +68,19 @@ public E removeLast()
    count--;
    return temp.value();
 }
+
+    @Override
+    public E getFirst() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public E removeFirst() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int indexOf(E value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
