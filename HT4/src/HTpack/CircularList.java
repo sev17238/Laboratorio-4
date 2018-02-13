@@ -17,6 +17,7 @@ public CircularList()
    count = 0;
 }
 
+@Override
 public void addFirst(E value)
 // pre: value non-null
 // post: adds element to head of list
@@ -33,6 +34,7 @@ public void addFirst(E value)
 }
 
 
+@Override
 public void addLast(E value)
 // pre: value non-null
 // post: adds element to tail of list
@@ -45,6 +47,7 @@ public void addLast(E value)
 
 // lo dificil es quitar el elemento de la cola
 
+@Override
 public E removeLast()
 // pre: !isEmpty()
 // post: returns and removes value from tail of list
