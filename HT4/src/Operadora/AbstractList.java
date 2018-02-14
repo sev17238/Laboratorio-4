@@ -1,11 +1,11 @@
 
-package HTpack;
+package Operadora;
 
 /**
  *
  * @author SDiego
  */
-public abstract class AbstractList<E>implements List<E>{
+public abstract class AbstractList<E> implements iLista<E>{
     protected int size;
    public AbstractList()
    // post: does nothing

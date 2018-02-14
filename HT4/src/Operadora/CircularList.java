@@ -1,5 +1,5 @@
 
-package HTpack;
+package Operadora;
 
 /**
  *
@@ -81,6 +81,11 @@ public E removeLast()
 
     @Override
     public int indexOf(E value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public double operar(String expresion) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

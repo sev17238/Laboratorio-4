@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package HTpack;
+package Operadora;
 
 /**
  *
@@ -49,5 +49,6 @@ public interface iPila<E>
     */
    public int size();
    // post: returns the number of elements in the stack
-
+   
+   public double operar(String expresion);
 }

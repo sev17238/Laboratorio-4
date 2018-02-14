@@ -1,37 +1,46 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Operadora;
+import java.util.Vector;
 
 /**
  *
  * @author Ana Lucía Hernández 17138. Diego Sevilla (17238)
  */
-
-
-package HTpack;
-
-public class Calculos {
+public class StackVector<E> extends AbstractStack<E>{
     private StackVector<Double> sv;
-    
     /**
-     * Constructor clase calculos
+     *  Constructor de la clase
      */
-    public Calculos()
+    public StackVector()
+    // post: constructs a new, empty stack
     {
+        super();
         sv = new StackVector<>();
     }
-    
+
+    @Override
+    public double operar(String expresion) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void push(E item) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     /**
-     * 
-     * @param expresion: String que contiene todos los numerandos y operaciones que se quieren realizar
-     * @return el resultado de operar todo lo que dice el string 
-     */
-    public double operar(String expresion)
-    {
+    @Override
+    public double operar(String expresion) {
         String[] expresionSeparada=expresion.split("");
         int longitud=expresionSeparada.length;
         for (int i=0; i<longitud;i++)
         {
             try
             {
-                sv.push(Double.parseDouble(expresionSeparada[i]));
+                super.push(Double.parseDouble(expresionSeparada[i]));
             }
             catch(Exception e)
             {
@@ -99,4 +108,5 @@ public class Calculos {
         }
             return sv.peek();
     }
+    }**/
 }
