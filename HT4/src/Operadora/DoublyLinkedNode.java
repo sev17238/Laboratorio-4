@@ -3,12 +3,13 @@ package Operadora;
 
 /**
  *
- * @author SDiego
+ * @author Diego Sevilla 17238
+ * @author AnaLucia Hernandez 17138
  */
 public class DoublyLinkedNode<E>{
-    private E data;
-    private DoublyLinkedNode<E> nextElement;
-    private DoublyLinkedNode<E> previousElement;
+    protected E data;
+    protected DoublyLinkedNode<E> nextElement;
+    protected DoublyLinkedNode<E> previousElement;
 
     public DoublyLinkedNode(E v,DoublyLinkedNode<E> next,DoublyLinkedNode<E> previous){
         data = v;
@@ -24,19 +25,22 @@ public class DoublyLinkedNode<E>{
     // post: constructs a single element
         this(v,null,null);
     }
-    public DoublyLinkedNode<E> previous()
-    {
-        return previousElement;
-        
-    }
-    public void setNext(DoublyLinkedNode<E> element)
-    {
-        nextElement = element;
-    }
+    
     public E value()
    // post: returns value associated with this element
    {
       return data;
    }
-
+    
+   public DoublyLinkedNode<E> next()
+   // post: returns reference to next value in list
+   {
+      return nextElement;
+   }
+   
+   public DoublyLinkedNode<E> previous()
+   // post: returns reference to next value in list
+   {
+      return previousElement;
+   }
 }

@@ -3,18 +3,24 @@ package Operadora;
 
 /**
  *
- * @author SDiego
+ * @author Diego Sevilla 17238
+ * @author AnaLucia Hernandez 17138
  */
 public class CircularList<E> extends AbstractList<E>{
 
-private Node<E> tail; 
-private int count;
+protected Node<E> tail; 
+protected int count;
 
 public CircularList()
 // pre: constructs a new circular list
 {
    tail = null;
    count = 0;
+}
+
+@Override
+public int size(){
+    return count;
 }
 
 @Override
@@ -33,6 +39,17 @@ public void addFirst(E value)
    count++;
 }
 
+@Override
+public E removeFirst(){
+    
+    if(tail == null){
+        tail = null;
+    }
+    Node<E> temp = tail;
+    tail = tail.next();
+    count--;
+    return temp.value();
+}
 
 @Override
 public void addLast(E value)
@@ -44,9 +61,7 @@ public void addLast(E value)
    tail = tail.next();
 }
 
-
 // lo dificil es quitar el elemento de la cola
-
 @Override
 public E removeLast()
 // pre: !isEmpty()
@@ -69,17 +84,15 @@ public E removeLast()
    return temp.value();
 }
 
-    @Override
-    public E getFirst() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public E removeFirst() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
+ @Override
+  public E getFirst()
+  // pre: list is not empty
+  // post: returns first value in list
+  {
+      return tail.value();
+  }      
+  
+  @Override
     public int indexOf(E value) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

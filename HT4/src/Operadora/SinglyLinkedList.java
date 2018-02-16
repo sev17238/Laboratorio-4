@@ -2,8 +2,8 @@
 package Operadora;
 
 /**
- *
- * @author SDiego
+ * @author Diego Sevilla 17238
+ * @author AnaLucia Hernandez 17138
  */
 public class SinglyLinkedList<E> extends AbstractList<E>{
 
@@ -34,6 +34,31 @@ public class SinglyLinkedList<E> extends AbstractList<E>{
      count++;
   }
   
+    @Override
+  public void addLast(E value)
+  // post: adds value to end of list
+  {
+      // location for new value
+      Node<E> temp = new Node<E>(value,null);
+      if (head != null)
+     {
+         // pointer to possible tail
+         Node<E> finger = head;
+         while (finger.next() != null)
+         {
+                finger = finger.next();
+         }
+		 
+         finger.setNext(temp);
+      } else head = temp;	  
+	  count++;	  
+   }
+  
+   @Override
+  public E removeLast(){
+      return null;
+  }
+  
    @Override
   public E removeFirst()
   // pre: list is not empty
@@ -51,30 +76,7 @@ public class SinglyLinkedList<E> extends AbstractList<E>{
   // post: returns first value in list
   {
       return head.value();
-  }
-  
-   @Override
-  public void addLast(E value)
-  // post: adds value to end of list
-  {
-      // location for new value
-      Node<E> temp = new Node<E>(value,null);
-      if (head != null)
-     {
-         // pointer to possible tail
-         Node<E> finger = head;
-         while (finger.next() != null)
-         {
-            finger = finger.next();
-         }
-		 
-         finger.setNext(temp);
-      } else head = temp;
-	  
-	  count++;
-	  
-   }
-   
+  }      
    
    @Override
    public boolean contains(E value)
@@ -88,12 +90,7 @@ public class SinglyLinkedList<E> extends AbstractList<E>{
       }
       return finger != null;
    }
-
-    @Override
-    public E removeLast() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+   
     @Override
     public int indexOf(E value) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -103,5 +100,4 @@ public class SinglyLinkedList<E> extends AbstractList<E>{
     public double operar(String expresion) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
 }

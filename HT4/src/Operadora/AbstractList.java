@@ -3,13 +3,15 @@ package Operadora;
 
 /**
  *
- * @author SDiego
+ * @author Diego Sevilla 17238
+ * @author AnaLucia Hernandez 17138
  */
 public abstract class AbstractList<E> implements iLista<E>{
-    protected int size;
+ 
    public AbstractList()
    // post: does nothing
    {
+ 
    }
 
    @Override
@@ -26,11 +28,5 @@ public abstract class AbstractList<E> implements iLista<E>{
   {
 	return -1 != indexOf(value);
   }
-  
-    @Override
-    public int size(){
-      return size;
-  }
-    
   
 }

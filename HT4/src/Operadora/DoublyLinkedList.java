@@ -2,8 +2,8 @@
 package Operadora;
 
 /**
- *
- * @author SDiego
+ * @author Diego Sevilla 17238
+ * @author AnaLucia Hernandez 17138
  */
 public class DoublyLinkedList<E> extends AbstractList<E>{
 protected int count;
@@ -18,6 +18,10 @@ public DoublyLinkedList()
    count = 0;
 }
 
+@Override
+public int size(){
+    return count;
+}
 
 @Override
 public void addFirst(E value)
@@ -44,6 +48,13 @@ public void addLast(E value)
    count++;
 }
 
+@Override
+public E removeFirst(){
+    DoublyLinkedNode<E> temp = head;
+    head = head.next();
+    count--;
+    return temp.value();
+}
 
 @Override
 public E removeLast()
@@ -55,43 +66,32 @@ public E removeLast()
    if (tail == null) {
        head = null;
    } else {
-       tail.setNext(null);
+       //tail.setNext(null);
    }
    count--;
    return temp.value();
 }
 
-public int lastIndexOf(E value)
-// pre: value is not null
-// post: returns the (0-origin) index of value,
-// or -1 if value is not found
-{
-int i = size()-1;
-DoublyLinkedNode<E> finger = tail;
-// search for last matching value, result is desired index
-while (finger != null && !finger.value().equals(value))
-{
-finger = finger.previous();
-i--;
-}
-if (finger == null)
-{ // value not found, return indicator
-return -1;
-} else {
-// value found, return index
-return i;
-}
-}
-
-    @Override
-    public E getFirst() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public E removeFirst() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+ @Override
+  public E getFirst()
+  // pre: list is not empty
+  // post: returns first value in list
+  {
+      return head.value();
+  } 
+  
+   @Override
+   public boolean contains(E value)
+   // pre: value is not null
+   // post: returns true iff value is found in list
+  {
+      DoublyLinkedNode<E> finger = head;
+	  
+      while (finger != null &&!finger.value().equals(value)){
+          finger = finger.next();
+      }
+      return finger != null;
+   }
 
     @Override
     public int indexOf(E value) {
@@ -101,5 +101,6 @@ return i;
     @Override
     public double operar(String expresion) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+}
+   
 }
