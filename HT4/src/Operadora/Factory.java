@@ -40,7 +40,7 @@ class Factory<E> {
             }
             else if(entryLista.equals("Lista Circular"))
             {
-                implementacion = new CircularList<>();
+                implementacion = new CircularLinkedList<>();
             }
         }
         return implementacion;            

@@ -37,9 +37,9 @@ public class Calculos {
         if (imp instanceof AbstractList)
         {
             AbstractList lista = (AbstractList)imp;
-            if (lista instanceof CircularList)
+            if (lista instanceof CircularLinkedList)
             {
-                respuesta = ((CircularList) lista).operar(expresion);
+                respuesta = ((CircularLinkedList) lista).operar(expresion);
             }
             else if (lista instanceof DoublyLinkedList)
             {
