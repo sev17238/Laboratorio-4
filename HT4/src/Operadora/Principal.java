@@ -13,14 +13,18 @@ import java.util.Scanner;
  */
 public class Principal {
     
-    public static void main (String[] args) throws IOException
-    {
+    public static void main (String[] args) throws IOException{
+        int decision = 0;        
+        
         System.out.println("Ingrese la direccion o el nombre del documento .txt (en el caso está en la misma carpeta que el programa): ");
         Scanner teclado = new Scanner(System.in);
         String file = teclado.nextLine();
         Calculos calc = new Calculos();
-        BufferedReader br = new BufferedReader(new FileReader(file)); 
-        try {            
+        
+    while(decision != 1){
+        BufferedReader br = new BufferedReader(new FileReader(file));     
+                            
+        try {                
             StringBuilder sb = new StringBuilder();
             String line = br.readLine();
 
@@ -106,11 +110,17 @@ public class Principal {
                     }
                     break;
             }           
-       
+            
+            System.out.println("Desea salir o probar otra implementacion?\n0.No\n1.Si");
+            decision = Integer.parseInt(teclado.nextLine());
+        
         }finally{
             br.close();
-        }
-    }/**
+        }  
+    }
+        
+        /**
+         * 
     String expresion, String entry, String entryLista, String entryStack
             
             if (Double.isNaN(calc.operar(everything)))
@@ -121,5 +131,6 @@ public class Principal {
             {
                 System.out.println(calc.operar(everything));                
             }**/
-    
+        
+    }
 }
