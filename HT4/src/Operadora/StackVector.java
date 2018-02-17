@@ -46,6 +46,7 @@ public class StackVector<E> extends AbstractStack<E>{
     public double operar(String linea) {
         double result = 0;    
         StackVector<String> list = new StackVector<String>();
+        linea = linea + " ";
         try{
             for(int i =1;i<linea.length();i++){
                     String caracter = linea.substring((i-1), i);                                                                                

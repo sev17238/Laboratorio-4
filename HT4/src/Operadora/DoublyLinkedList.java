@@ -102,6 +102,7 @@ public E removeLast()
     public double operar(String linea) {
         double result = 0;    
         DoublyLinkedList<String> list = new DoublyLinkedList<String>();
+        linea = linea + " ";
         try{
             for(int i =1;i<linea.length();i++){
                     String caracter = linea.substring((i-1), i);                                                                                

@@ -100,6 +100,7 @@ public class SinglyLinkedList<E> extends AbstractList<E>{
     public double operar(String linea) {
         double result = 0;    
         SinglyLinkedList<String> list = new SinglyLinkedList<String>();
+        linea = linea + " ";
         try{
             for(int i =1;i<linea.length();i++){
                     String caracter = linea.substring((i-1), i);                                                                                
