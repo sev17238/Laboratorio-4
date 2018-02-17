@@ -66,15 +66,7 @@ public class StackArrayList<E> extends AbstractStack<E>{
                       ||caracter.contentEquals("7")||caracter.contentEquals("8")||caracter.contentEquals("9")){
                         list.push(caracter);
                     }
-                    //Si por el contrario el usuario ingresa algun operando de los 
-                    //Basicos deberia de efectuar tal operacion y lo hace con una 
-                    //comparacion de Strings
-                    //Cabe notar que en los Stacks solamente se puede sacar el 
-                    //Ultimo valor asi que para operar se guarda este valor de forma
-                    //Temporal en una variable para que asi de esta forma
-                    //se pueda operar el ultimo elemento despues del antepenultimo
-                    //en la operacion, de tal forma que obtiene un valor a y un valor b
-                    //pero los opera como b (signo)a                    
+                   
                     else if(caracter.contentEquals("+")){                        
                         result = Double.parseDouble(list.pop()) + Double.parseDouble(list.pop());
                         list.push(Double.toString(result));
@@ -104,14 +96,9 @@ public class StackArrayList<E> extends AbstractStack<E>{
                         }       
                     }            
                 }
-        }catch(Exception e){
-           
+        }catch(Exception e){           
             result = Double.NaN;
         }                    
         return result;        
     }
-    
-    
-    
-    
 }

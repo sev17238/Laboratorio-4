@@ -3,6 +3,7 @@ package Operadora;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -17,10 +18,9 @@ public class Principal {
         System.out.println("Ingrese la direccion o el nombre del documento .txt (en el caso está en la misma carpeta que el programa): ");
         Scanner teclado = new Scanner(System.in);
         String file = teclado.nextLine();
-        BufferedReader br = new BufferedReader(new FileReader(file));
         Calculos calc = new Calculos();
-        try 
-        {
+        BufferedReader br = new BufferedReader(new FileReader(file)); 
+        try {            
             StringBuilder sb = new StringBuilder();
             String line = br.readLine();
 
@@ -106,9 +106,8 @@ public class Principal {
                     }
                     break;
             }           
-        } 
-        finally 
-        {
+       
+        }finally{
             br.close();
         }
     }/**
@@ -122,4 +121,5 @@ public class Principal {
             {
                 System.out.println(calc.operar(everything));                
             }**/
+    
 }
