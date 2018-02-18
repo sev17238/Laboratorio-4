@@ -21,117 +21,95 @@ public class Principal {
         String file = teclado.nextLine();
         Calculos calc = new Calculos();
         
-    while(decision != 1){
-        BufferedReader br = new BufferedReader(new FileReader(file));     
-                            
-        try {                
-            StringBuilder sb = new StringBuilder();
-            String line = br.readLine();
+        while(decision != 2){
+            BufferedReader br = new BufferedReader(new FileReader(file));     
 
-            while (line != null) {
-                sb.append(line);
-                sb.append(System.lineSeparator());
-                line = br.readLine();
-            }
-            String everything = sb.toString();
-            System.out.println("¿Desea usar un Vector, una Lista o un ArrayList? (Escriba solo el numero) \n1. Vector \n2. ArrayList \n3. Lista");
-            String entryStack = teclado.nextLine();
-            switch(entryStack)
-            {
-                case "1":
-                    entryStack = "Vector";
-                    if (Double.isNaN(calc.operar(everything, entryStack, "")))
-                    {
-                        System.out.println("\nMATH ERROR.\n");
-                    }
-                    else
-                    {
-                        System.out.println("\n"+calc.operar(everything, entryStack, "")+"\n");                
-                    }
-                    break;
-                case "2":
-                    entryStack = "ArrayList";
-                    if (Double.isNaN(calc.operar(everything, entryStack, "")))
-                    {
-                        System.out.println("\nMATH ERROR.\n");
-                    }
-                    else
-                    {
-                        System.out.println("\n"+calc.operar(everything, entryStack, "")+"\n");                
-                    }
-                    break;
-                case "3":
-                    entryStack = "Lista";
-                    System.out.println("¿Desea usar una lista doblemente encadenada, simplemente encadenada o circular? (Escriba solo el numero) \n1. Doblemente encadenada \n2. Simplemente encadenada \n3. Lista Circular");
-                    String entryLista = teclado.nextLine();
-                    switch (entryLista)
-                    {
-                        case "1":
-                            entryLista = "Simplemente encadenada";
-                            if (Double.isNaN(calc.operar(everything, entryStack, entryLista)))
-                            {
-                                System.out.println("\nMATH ERROR.\n");
-                            }
-                            else
-                            {
-                                System.out.println("\n"+calc.operar(everything, entryStack, entryLista)+"\n");
-                            }
-                            break;
-                        case "2":
-                            entryLista = "Doblemente encadenada";
-                            if (Double.isNaN(calc.operar(everything, entryStack, entryLista)))
-                            {
-                                System.out.println("\nMATH ERROR.\n");
-                            }
-                            else
-                            {
-                                System.out.println("\n"+calc.operar(everything, entryStack, entryLista)+"\n");
-                            }
-                            break;
-                        case "3":
-                            entryLista = "Lista Circular";
-                            if (Double.isNaN(calc.operar(everything, entryStack, entryLista)))
-                            {
-                                System.out.println("\nMATH ERROR.\n");
-                            }
-                            else 
-                            {
-                                System.out.println("\n"+calc.operar(everything, entryStack, entryLista)+"\n");
-                            }
-                            break;
-                            
-                    }
-                    if (Double.isNaN(calc.operar(everything, entryStack, "")))
-                    {
-                        System.out.println("\nMATH ERROR.\n");
-                    }
-                    else
-                    {
-                        System.out.println("\n"+calc.operar(everything,entryStack, "")+"\n");                
-                    }
-                    break;
-            }
-            
-            System.out.println("Desea salir?\n0.No\n1.Si");
-            decision = Integer.parseInt(teclado.nextLine());
-        
-        }finally{
-            br.close();
-        }  
-    }
-        
-        /**
-         * 
-    String expresion, String entry, String entryLista, String entryStack
-            
-            if (Double.isNaN(calc.operar(everything)))
-            {
-                System.out.println("MATH ERROR.");
-            }
-            else
-            {
-                System.out.println(calc.operar(everything));                
-            }**/
+            try {                
+                StringBuilder sb = new StringBuilder();
+                String line = br.readLine();
+
+                while (line != null) {
+                    sb.append(line);
+                    sb.append(System.lineSeparator());
+                    line = br.readLine();
+                }
+                String everything = sb.toString();
+                System.out.println("¿Desea usar un Vector, una Lista o un ArrayList? (Escriba solo el numero) \n1. Vector \n2. ArrayList \n3. Lista");
+                String entryStack = teclado.nextLine();
+                switch(entryStack)
+                {
+                    case "1":
+                        entryStack = "Vector";
+                        if (Double.isNaN(calc.operar(everything, entryStack, "")))
+                        {
+                            System.out.println("\nMATH ERROR.\n");
+                        }
+                        else
+                        {
+                            System.out.println("\n"+calc.operar(everything, entryStack, "")+"\n");                
+                        }
+                        break;
+                    case "2":
+                        entryStack = "ArrayList";
+                        if (Double.isNaN(calc.operar(everything, entryStack, "")))
+                        {
+                            System.out.println("\nMATH ERROR.\n");
+                        }
+                        else
+                        {
+                            System.out.println("\n"+calc.operar(everything, entryStack, "")+"\n");                
+                        }
+                        break;
+                    case "3":
+                        entryStack = "Lista";
+                        System.out.println("¿Desea usar una lista doblemente encadenada, simplemente encadenada o circular? (Escriba solo el numero) \n1. Doblemente encadenada \n2. Simplemente encadenada \n3. Lista Circular");
+                        String entryLista = teclado.nextLine();
+                        switch (entryLista)
+                        {
+                            case "1":
+                                entryLista = "Simplemente encadenada";
+                                if (Double.isNaN(calc.operar(everything, entryStack, entryLista)))
+                                {
+                                    System.out.println("\nMATH ERROR.\n");
+                                }
+                                else
+                                {
+                                    System.out.println("\n"+calc.operar(everything, entryStack, entryLista)+"\n");
+                                }
+                                break;
+                            case "2":
+                                entryLista = "Doblemente encadenada";
+                                if (Double.isNaN(calc.operar(everything, entryStack, entryLista)))
+                                {
+                                    System.out.println("\nMATH ERROR.\n");
+                                }
+                                else
+                                {
+                                    System.out.println("\n"+calc.operar(everything, entryStack, entryLista)+"\n");
+                                }
+                                break;
+                            case "3":
+                                entryLista = "Lista Circular";
+                                if (Double.isNaN(calc.operar(everything, entryStack, entryLista)))
+                                {
+                                    System.out.println("\nMATH ERROR.\n");
+                                }
+                                else 
+                                {
+                                    System.out.println("\n"+calc.operar(everything, entryStack, entryLista)+"\n");
+                                }
+                                break;
+
+                        }
+                }
+
+                System.out.println("Desea salir?\n 1.No \n2.Si");
+                decision = Integer.parseInt(teclado.nextLine());
+
+            }finally{
+                br.close();
+            }  
+        }
         
     }
 }

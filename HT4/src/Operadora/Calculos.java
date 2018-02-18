@@ -33,9 +33,10 @@ public class Calculos {
         Factory fac = new Factory();
         Object imp = fac.getStack(entryStack, entryLista);
         double respuesta = 0;
-        if (imp instanceof AbstractList)
+        if (imp instanceof StackList)
         {
             StackList lista = (StackList)imp;
+            respuesta = lista.operar(expresion);
         }
         else if(imp instanceof AbstractStack)
         {
