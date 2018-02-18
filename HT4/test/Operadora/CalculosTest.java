@@ -42,17 +42,33 @@ public class CalculosTest {
      */
     @org.junit.Test
     public void testOperar() {
-        System.out.println("operar");
-        String expresion = "";
-        String entry = "";
+        System.out.println("operar listo");
+        String expresion = "22+4*2*8/";
+        String entry = "Stack";
         String entryLista = "";
-        String entryStack = "";
+        String entryStack = "Vector";
         Calculos instance = new Calculos();
-        double expResult = 0.0;
+        double expResult = 4.0;
         double result = instance.operar(expresion, entry, entryLista, entryStack);
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    }
+    
+    /**
+     * Test for another case of operar method, of class Calculos.
+     */
+    @org.junit.Test
+    public void testOperar2() {
+        System.out.println("operar2 listo");
+        String expresion = "22+4*2*4/";
+        String entry = "Lista";
+        String entryLista = "Lista Circular";
+        String entryStack = "";
+        Calculos instance = new Calculos();
+        double expResult = 8.0;
+        double result = instance.operar(expresion, entry, entryLista, entryStack);
+        assertEquals(expResult, result, 0.0);
+        // TODO review the generated test code and remove the default call to fail.
     }
     
 }
