@@ -10,7 +10,6 @@ package Operadora;
 import java.util.ArrayList;
 
 public class Calculos {
-    private StackVector<Double> sv;
     static boolean INSTANCE_FLAG = false;
     
     /**
