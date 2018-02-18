@@ -14,34 +14,20 @@ class Factory<E> {
     public Factory(){}
 //selecciona la implementacion a utilizar para un stack
 //se utiliza el patron Factory
-   public Object getStack(String entry, String entryLista, String entryStack) {
+   public Object getStack(String entryStack, String entryLista) {
     // seleccion de la implementacion a utilizar:
         
-        if (entry.equals("Stack"))
+        if(entryStack.equals("Vector"))
         {
-            if(entryStack.equals("Vector"))
-            {
-                implementacion =  new StackVector<>();
-            }
-            else if(entryStack.equals("ArrayList"))
-            {
-                implementacion = new StackArrayList<>();
-            }
+            implementacion =  new StackVector<>();
         }
-        else if(entry.equals("Lista"))
+        else if(entryStack.equals("ArrayList"))
         {
-            if(entryLista.equals("Simplemente encadenada"))
-            {
-                implementacion = new SinglyLinkedList<>();
-            }
-            else if(entryLista.equals("Doblemente encadenada"))
-            {
-                implementacion = new DoublyLinkedList<>();
-            }
-            else if(entryLista.equals("Lista Circular"))
-            {
-                implementacion = new CircularLinkedList<>();
-            }
+            implementacion = new StackArrayList<>();
+        }
+        else if(entryStack.equals("Lista"))
+        {
+            implementacion = new StackList<>(entryLista);
         }
         return implementacion;            
    }

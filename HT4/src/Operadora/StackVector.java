@@ -7,7 +7,8 @@ import java.util.Vector;
  * @author Ana Lucía Hernández 17138. Diego Sevilla (17238)
  */
 public class StackVector<E> extends AbstractStack<E>{
-    Vector myVector;
+    protected Vector myVector;
+    
     public StackVector()
     {
         myVector=new Vector();

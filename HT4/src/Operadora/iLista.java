@@ -43,5 +43,4 @@ public interface iLista<E> {
    // post: returns (0-origin) index of value,
    // or -1 if value is not found
    
-   public double operar(String expresion);
 }

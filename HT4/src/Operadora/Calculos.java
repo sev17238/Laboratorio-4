@@ -28,26 +28,14 @@ public class Calculos {
      * @param entryStack: tipo de stack que se desea
      * @return el resultado de operar todo lo que dice el string 
      */
-    public double operar(String expresion, String entry, String entryLista, String entryStack)
+    public double operar(String expresion, String entryStack, String entryLista)
     {
         Factory fac = new Factory();
-        Object imp = fac.getStack(entry, entryLista, entryStack);
+        Object imp = fac.getStack(entryStack, entryLista);
         double respuesta = 0;
         if (imp instanceof AbstractList)
         {
-            AbstractList lista = (AbstractList)imp;
-            if (lista instanceof CircularLinkedList)
-            {
-                respuesta = ((CircularLinkedList) lista).operar(expresion);
-            }
-            else if (lista instanceof DoublyLinkedList)
-            {
-                respuesta = ((DoublyLinkedList) lista).operar(expresion);
-            }
-            else if (lista instanceof SinglyLinkedList)
-            {
-                respuesta = ((SinglyLinkedList) lista).operar(expresion);
-            }
+            StackList lista = (StackList)imp;
         }
         else if(imp instanceof AbstractStack)
         {
