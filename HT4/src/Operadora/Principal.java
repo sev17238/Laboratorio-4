@@ -46,24 +46,24 @@ public class Principal {
                     {
                         case "1":
                             entryStack = "Vector";
-                            if (Double.isNaN(calc.operar(entry, "", entryStack, "")))
+                            if (Double.isNaN(calc.operar(everything, entry, "", entryStack)))
                             {
-                                System.out.println("MATH ERROR.");
+                                System.out.println("\nMATH ERROR.\n");
                             }
                             else
                             {
-                                System.out.println(calc.operar(entry, "", entryStack, ""));                
+                                System.out.println("\n"+calc.operar(everything, entry, "", entryStack)+"\n");                
                             }
                             break;
                         case "2":
                             entryStack = "ArrayList";
-                            if (Double.isNaN(calc.operar(entry, "", entryStack, "")))
+                            if (Double.isNaN(calc.operar(everything, entry, "", entryStack)))
                             {
-                                System.out.println("MATH ERROR.");
+                                System.out.println("\nMATH ERROR.\n");
                             }
                             else
                             {
-                                System.out.println(calc.operar(entry, "", entryStack, ""));                
+                                System.out.println("\n"+calc.operar(everything, entry, "", entryStack)+"\n");                
                             }
                             break;
                     }
@@ -78,40 +78,40 @@ public class Principal {
                             entryLista = "Simplemente encadenada";
                             if (Double.isNaN(calc.operar(everything, entry, entryLista, "")))
                             {
-                                System.out.println("MATH ERROR.");
+                                System.out.println("\nMATH ERROR.\n");
                             }
                             else
                             {
-                                System.out.println(calc.operar(everything, entry, entryLista, ""));
+                                System.out.println("\n"+calc.operar(everything, entry, entryLista, "")+"\n");
                             }
                             break;
                         case "2":
                             entryLista = "Doblemente encadenada";
                             if (Double.isNaN(calc.operar(everything, entry, entryLista, "")))
                             {
-                                System.out.println("MATH ERROR.");
+                                System.out.println("\nMATH ERROR.\n");
                             }
                             else
                             {
-                                System.out.println(calc.operar(everything, entry, entryLista, ""));
+                                System.out.println("\n"+calc.operar(everything, entry, entryLista, "")+"\n");
                             }
                             break;
                         case "3":
                             entryLista = "Lista Circular";
                             if (Double.isNaN(calc.operar(everything, entry, entryLista, "")))
                             {
-                                System.out.println("MATH ERROR.");
+                                System.out.println("\nMATH ERROR.\n");
                             }
                             else
                             {
-                                System.out.println(calc.operar(everything, entry, entryLista, ""));
+                                System.out.println("\n"+calc.operar(everything, entry, entryLista, "")+"\n");
                             }
                             break;
                     }
                     break;
             }           
             
-            System.out.println("Desea salir o probar otra implementacion?\n0.No\n1.Si");
+            System.out.println("Desea salir?\n0.No\n1.Si");
             decision = Integer.parseInt(teclado.nextLine());
         
         }finally{
