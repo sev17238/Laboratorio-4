@@ -35,14 +35,6 @@ public class StackVector<E> extends AbstractStack<E>{
     public E peek() {
         return (E)myVector.lastElement();
     }
-    
-    @Override
-    public int size()
-    // post: returns the number of elements in the stack
-    {
-    return myVector.size();
-    }
-    
     @Override
     public double operar(String linea) {
         double result = 0;    

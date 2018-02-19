@@ -8,8 +8,9 @@ package Operadora;
  */
 public class CircularLinkedList<E> extends AbstractList<E>{
 
-protected Node<E> tail; 
-protected int count;
+private Node<E> tail; 
+private int count;
+private CircularLinkedList<String> listc;
 
 public CircularLinkedList()
 // pre: constructs a new circular list
@@ -28,7 +29,7 @@ public void addFirst(E value)
 // pre: value non-null
 // post: adds element to head of list
 {
-   Node<E> temp = new Node<E>(value);
+   Node<E> temp = new Node<>(value);
    if (tail == null) { // first value added
        tail = temp;
        tail.setNext(tail);

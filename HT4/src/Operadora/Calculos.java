@@ -7,7 +7,7 @@
 
 package Operadora;
 
-import java.util.ArrayList;
+
 
 public class Calculos {
     static boolean INSTANCE_FLAG = false;
@@ -36,7 +36,15 @@ public class Calculos {
         if (imp instanceof StackList)
         {
             StackList lista = (StackList)imp;
-            respuesta = lista.operar(expresion);
+            if (entryLista.equals("Lista Circular"))
+            {
+                respuesta = lista.operarc(expresion);
+            }
+            else
+            {
+                respuesta = lista.operar(expresion);
+            }
+                
         }
         else if(imp instanceof AbstractStack)
         {

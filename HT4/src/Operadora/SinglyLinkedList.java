@@ -7,8 +7,8 @@ package Operadora;
  */
 public class SinglyLinkedList<E> extends AbstractList<E>{
 
-   protected int count; // list size
-   protected Node<E> head; // ref. to first element
+   private int count; // list size
+   private Node<E> head; // ref. to first element
 
    public SinglyLinkedList()
    // post: generates an empty list
