@@ -90,9 +90,28 @@ public class SinglyLinkedList<E> extends AbstractList<E>{
       }
       return finger != null;
    }
-   
+   @Override
+    public E peek()
+    {
+        Node<E> finger = head;
+	E value = null;
+        while (finger != null)
+        {
+            finger = finger.next();
+            value = finger.value();
+        }
+        return value;
+    }
+
     @Override
     public int indexOf(E value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Node<E> finger = head;
+        int contador =0;
+	while (finger != null &&!finger.value().equals(value))
+        {
+            finger = finger.next();
+            contador++;
+        }
+        return contador;
     }
 }

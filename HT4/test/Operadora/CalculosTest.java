@@ -41,34 +41,71 @@ public class CalculosTest {
      * Test of operar method, of class Calculos.
      */
     @org.junit.Test
-    public void testOperar() {
-        System.out.println("operar listo");
-        String expresion = "22+4*2*8/";
-        String entry = "Stack";
+    public void testOperarVector() {
+        String expresion = "3 4 + 6 5 * - 2 /";
         String entryLista = "";
         String entryStack = "Vector";
         Calculos instance = new Calculos();
-        double expResult = 4.0;
-        double result = instance.operar(expresion, entry, entryLista, entryStack);
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
+        double expResult = -11.5;
+        double result = instance.operar(expresion, entryStack, entryLista);
+        if (result != expResult)
+        {
+            fail("La prueba ha fallado");
+        }
     }
-    
+    /**
+     * Test of operar method, of class Calculos.
+     */
+    @org.junit.Test
+    public void testOperarArrayList() {
+        String expresion = "3 4 + 6 5 * - 2 /";
+        String entryLista = "";
+        String entryStack = "ArrayList";
+        Calculos instance = new Calculos();
+        double expResult = -11.5;
+        double result = instance.operar(expresion, entryStack, entryLista);
+        if (result != expResult)
+        {
+            fail("La prueba ha fallado");
+        }
+    }
     /**
      * Test for another case of operar method, of class Calculos.
      */
     @org.junit.Test
-    public void testOperar2() {
-        System.out.println("operar2 listo");
-        String expresion = "22+4*2*4/";
-        String entry = "Lista";
-        String entryLista = "Lista Circular";
-        String entryStack = "";
+    public void testOperarListaSingly() {
+        String expresion = "3 4 + 6 5 * - 2 /";
+        String entryStack = "Lista";
+        String entryLista = "Simplemente encadenada";
         Calculos instance = new Calculos();
-        double expResult = 8.0;
-        double result = instance.operar(expresion, entry, entryLista, entryStack);
+        double expResult = -11.5;
+        double result = instance.operar(expresion, entryStack, entryLista);
         assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
     }
-    
+    /**
+     * Test for another case of operar method, of class Calculos.
+     */
+    @org.junit.Test
+    public void testOperarListaDoubly() {
+        String expresion = "3 4 + 6 5 * - 2 /";
+        String entryStack = "Lista";
+        String entryLista = "Doblemente encadenada";
+        Calculos instance = new Calculos();
+        double expResult = -11.5;
+        double result = instance.operar(expresion, entryStack, entryLista);
+        assertEquals(expResult, result, 0.0);
+    }
+    /**
+     * Test for another case of operar method, of class Calculos.
+     */
+    @org.junit.Test
+    public void testOperarListaCircular() {
+        String expresion = "3 4 + 6 5 * - 2 /";
+        String entryStack = "Lista";
+        String entryLista = "Lista Circular";
+        Calculos instance = new Calculos();
+        double expResult = -11.5;
+        double result = instance.operar(expresion, entryStack, entryLista);
+        assertEquals(expResult, result, 0.0);
+    }
 }

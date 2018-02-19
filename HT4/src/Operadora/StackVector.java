@@ -46,7 +46,7 @@ public class StackVector<E> extends AbstractStack<E>{
     @Override
     public double operar(String linea) {
         double result = 0;    
-        StackVector<String> list = new StackVector<String>();
+        StackVector<String> list = new StackVector<>();
         linea = linea + " ";
         try{
             for(int i =1;i<linea.length();i++){
@@ -86,89 +86,10 @@ public class StackVector<E> extends AbstractStack<E>{
                         }       
                     }            
                 }
-        }catch(Exception e){           
+        }
+        catch(Exception e){           
             result = Double.NaN;
         }                    
         return result;        
     }
-
-   
-    /**
-    @Override
-    public double operar(String expresion) {
-        String[] expresionSeparada=expresion.split("");
-        int longitud=expresionSeparada.length;
-        for (int i=0; i<longitud;i++)
-        {
-            try
-            {
-                super.push(Double.parseDouble(expresionSeparada[i]));
-            }
-            catch(Exception e)
-            {
-                if(expresionSeparada[i].equals("+"))
-                {
-                    if (sv.size() > 1) //Esto se hace para ver si ya se tiene un numerando con el cual trabajar
-                    { //para evitar errores cuando se ingresen dos operandos consecutivos, por ejemplo.
-                        double num2=sv.pop();
-                        double num1=sv.pop();
-                        double resultante = num1+num2;
-                        sv.push(resultante);
-                    }
-                    else
-                    {
-                        return Double.NaN;
-                    }
-                }
-                else if(expresionSeparada[i].equals("*"))
-                {
-                    if (sv.size() > 1)
-                    {
-                        double num2=sv.pop();
-                        double num1=sv.pop();
-                        double resultante = num1*num2;
-                        sv.push(resultante);
-                    }
-                    else
-                    {
-                        return Double.NaN;
-                    }
-                }
-                else if(expresionSeparada[i].equals("-"))
-                {
-                    if (sv.size()>1)
-                    {
-                        double num2=sv.pop();
-                        double num1=sv.pop();
-                        double resultante = num1-num2;
-                        sv.push(resultante);
-                    }
-                    else
-                    {
-                        return Double.NaN;
-                    }
-                }
-                else if(expresionSeparada[i].equals("/"))
-                {
-                    if (sv.size()>1)
-                    {
-                        double num2=sv.pop();
-                        double num1=sv.pop();
-                        if(num2==0)
-                        {
-                            return Double.NaN;
-                        }
-                        double resultante = num1/num2;
-                        sv.push(resultante);
-                    }
-                    else
-                    {
-                        return Double.NaN;
-                    }
-                }
-            }
-        }
-            return sv.peek();
-    }
-    }**/
 }

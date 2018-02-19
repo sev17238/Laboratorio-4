@@ -41,7 +41,9 @@ public void addFirst(E value)
 
 @Override
 public E removeFirst(){
-    throw new UnsupportedOperationException("Not supported yet.");
+    E value = tail.value();
+    tail = null;
+    return value;
 }
 
 @Override
@@ -87,6 +89,18 @@ public E removeLast()
   
   @Override
     public int indexOf(E value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Node<E> finger = tail;
+        int counter =0;
+        while (finger.next().value() != tail) 
+        {
+            finger = finger.next();
+            counter++;
+        }
+        return counter;
+    }
+
+    @Override
+    public E peek() {
+        return tail.value();
     }
 }

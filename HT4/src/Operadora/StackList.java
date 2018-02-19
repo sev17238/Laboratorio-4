@@ -9,7 +9,7 @@ package Operadora;
  *
  * @author anahernandez
  */
-public class StackList <E>{
+public class StackList <E> extends AbstractStack<E>{
     private iLista<String> list;
     
     public StackList(String tipo)
@@ -27,6 +27,16 @@ public class StackList <E>{
             list = new CircularLinkedList<>();
         }
     }
+    @Override
+    public void push(E item) {
+        list.addLast((String) item);
+    }
+    @Override
+    public E peek()
+    {
+        return (E) list.peek();
+    }
+    @Override
     public double operar(String linea) 
     {
         double result = 0;    
@@ -74,6 +84,13 @@ public class StackList <E>{
         }                    
         return result;        
 
+    }
+
+    @Override
+    public E pop() {
+        E value = (E)list.peek();
+        list.removeLast();
+        return value;
     }
     
 }

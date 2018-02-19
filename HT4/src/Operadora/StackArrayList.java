@@ -39,25 +39,16 @@ public class StackArrayList<E> extends AbstractStack<E>{
 	{
 		return data.get(size() - 1);
 	}
-	
-    @Override
-	public int size()
-	// post: returns the number of elements in the stack
-	{
-		return data.size();
-	}
-  
-    @Override
-	public boolean empty()
-	// post: returns true if and only if the stack is empty
-	{
-		return size() == 0;
-	}
+    @Override 
+    public int size()
+    {
+        return data.size();
+    }
 
     @Override
     public double operar(String linea) {
         double result = 0;    
-        StackArrayList<String> list = new StackArrayList<String>();
+        StackArrayList<String> list = new StackArrayList<>();
         linea = linea + " ";
         try{
             for(int i =1;i<linea.length();i++){

@@ -16,7 +16,7 @@ public abstract class AbstractList<E> implements iLista<E>{
 
    @Override
    public boolean isEmpty()
-   // post: returns true iff list has no elements
+   // post: returns true if list has no elements
    {
       return size() == 0;
    }

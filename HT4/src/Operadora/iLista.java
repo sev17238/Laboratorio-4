@@ -42,5 +42,5 @@ public interface iLista<E> {
    // pre: value is not null
    // post: returns (0-origin) index of value,
    // or -1 if value is not found
-   
+   public E peek();
 }

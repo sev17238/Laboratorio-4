@@ -13,18 +13,20 @@ public abstract class AbstractStack<E> implements iPila<E> {
     
 
     @Override
-    public E pop() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public abstract E pop();
 
     @Override
-    public E peek() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public abstract E peek();
 
     @Override
     public boolean empty() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return size() == 0;
+    }
+    @Override
+    public int size()
+    // post: returns the number of elements in the stack
+    {
+            return size();
     }
 
     

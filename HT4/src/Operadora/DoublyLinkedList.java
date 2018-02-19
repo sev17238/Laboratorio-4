@@ -18,10 +18,6 @@ public DoublyLinkedList()
    count = 0;
 }
 
-@Override
-public int size(){
-    return count;
-}
 
 @Override
 public void addFirst(E value)
@@ -94,7 +90,24 @@ public E removeLast()
    }
 
     @Override
+    public int size() {
+        return count;
+    }
+
+    @Override
+    public E peek() {
+        return tail.value();
+    }
+
+    @Override
     public int indexOf(E value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      DoublyLinkedNode<E> finger = head;
+      int counter =0;
+      while (finger != null &&!finger.value().equals(value))
+      {
+        finger = finger.next();
+        counter++;          
+      }
+      return counter;
     }
 }
