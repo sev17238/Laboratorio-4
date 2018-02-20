@@ -1,19 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Operadora;
 
 /**
- *
- * @author ana Lucía Hernandez (17138). Diego Sevilla (17238).
+ * Clase que demuestra la utilizacion del patron de diseño factory.
+ * @author Diego Sevilla 17238
+ * @author AnaLucia Hernandez 17138
  */
 class Factory<E> {
     Object implementacion;
+    /**
+     * Constructor vacio.
+     */
     public Factory(){}
-//selecciona la implementacion a utilizar para un stack
-//se utiliza el patron Factory
+    /**
+     * Selecciona la implementacion a utilizar para un stack o una lista.
+     * @param entryStack el stack que se quiere usar (vector, arraylist)
+     * @param entryLista la lista que se quiere usar (simply, doubly o circular)
+     * @return la instanciacion correspondiente
+     */
    public Object getStack(String entryStack, String entryLista) {
     // seleccion de la implementacion a utilizar:
         

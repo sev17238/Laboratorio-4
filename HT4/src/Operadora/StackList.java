@@ -1,18 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Operadora;
 
 /**
- *
- * @author anahernandez
+ * Clase que organiza las implementaciones de lista y que estiende a abstractlist.
+ * @author Diego Sevilla 17238
+ * @author AnaLucia Hernandez 17138
+ * @param <E> tipo generico o variable
  */
 public class StackList <E> extends AbstractStack<E>{
     private iLista<String> list;
     private iLista<String> listc;
-    
+    /**
+     * constructor que construye ya sea una lista simplemente encadenada,<p>
+     * una doblemente encadenada o una cicular.
+     * @param tipo un string que indica el tipo delista a construir
+     */
     public StackList(String tipo)
     {
         if (tipo.equals("Simplemente encadenada"))
@@ -25,18 +27,45 @@ public class StackList <E> extends AbstractStack<E>{
         }
         if (tipo.equals("Lista Circular"))
         {
-            listc = new CircularLinkedList<>();
+            listc = new CircularLinkedList<String>();
         }
     }
+    /**
+         * post: el valor es agregado a la lista
+         * @param item el elemento
+         */
     @Override
     public void push(E item) {
         list.addLast((String) item);
     }
+    /**
+         * pre: la lista no esta vacia
+         * post: el valor del tope a ser sacado es returnado
+         * @return el objeto del tope
+         */
     @Override
     public E peek()
     {
         return (E) list.peek();
     }
+    
+    /**
+         * pre: la lista no debe estar vacia<p>
+         * post: el item mas recientemente metido a la lista se saca primero.
+        */
+    @Override
+    public E pop() {
+        E value = (E)list.peek();
+        list.removeLast();
+        return value;
+    }
+    
+   /**
+     * Metodo que hace los calculos respectivos basados en la linea ingresada como parametro,<p>
+     * que sirve para las implementaciones de las listas simple y doblemente encadenada.
+     * @param linea la linea con la operacion postfix
+     * @return el resultado de la operacion en la linea postfix
+     */
     @Override
     public double operar(String linea) 
     {
@@ -85,6 +114,12 @@ public class StackList <E> extends AbstractStack<E>{
         }
         return result;    
     }
+    /**
+     * Metodo que hace los calculos respectivos basados en la linea ingresada como parametro,<p>
+     * que sirve para la implementacion de lista circular.
+     * @param linea la linea con la operacion postfix
+     * @return el resultado de la operacion en la linea postfix
+     */
     public double operarc(String linea) 
     {
         double result = 0;    
@@ -122,7 +157,7 @@ public class StackList <E> extends AbstractStack<E>{
                         }
                         else {
                         result = (1/Double.parseDouble(listc.removeLast())) * Double.parseDouble(listc.removeLast());
-                        list.addLast(Double.toString(result));    
+                        listc.addLast(Double.toString(result));    
                         //El metodo se sustituyo de division a producto por el inverso multiplicativo
                         }       
                     }            
@@ -133,12 +168,6 @@ public class StackList <E> extends AbstractStack<E>{
         return result;        
 
     }
-
-    @Override
-    public E pop() {
-        E value = (E)list.peek();
-        list.removeLast();
-        return value;
-    }
+    
     
 }

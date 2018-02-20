@@ -38,7 +38,7 @@ public class StackArrayListTest {
      */
     @Test
     public void testPush() {
-        System.out.println("push listo");
+        System.out.println("testPush");
         StackArrayList instance = new StackArrayList();
         Object item = "5";
         Object expResult = "5";
@@ -53,7 +53,7 @@ public class StackArrayListTest {
      */
     @Test
     public void testPop() {
-        System.out.println("pop listo");
+        System.out.println("testPop");
         StackArrayList<String> instance = new StackArrayList<String>();
         //ArrayList<String> places = new ArrayList<String>( Arrays.asList("Buenos Aires", "Córdoba", "La Plata"));
         instance.push("1");
@@ -69,7 +69,7 @@ public class StackArrayListTest {
      */
     @Test
     public void testPeek() {
-        System.out.println("peek listo");
+        System.out.println("testPeek");
         StackArrayList instance = new StackArrayList();
         instance.push("2");
         instance.push("3");
@@ -85,7 +85,7 @@ public class StackArrayListTest {
      */
     @Test
     public void testSize() {
-        System.out.println("size listo");
+        System.out.println("testSize");
         StackArrayList instance = new StackArrayList();
         instance.push("2");
         instance.push("3");
@@ -102,7 +102,7 @@ public class StackArrayListTest {
      */
     @Test
     public void testEmpty() {
-        System.out.println("empty listo");
+        System.out.println("testEmpty");
         StackArrayList instance = new StackArrayList();
         instance.push("1");
         instance.pop();
@@ -117,7 +117,7 @@ public class StackArrayListTest {
      */
     @Test
     public void testOperar() {
-        System.out.println("operar listo");
+        System.out.println("testOperar");
         String linea = "22+5*";
         StackArrayList instance = new StackArrayList();
         double expResult = 20.0;

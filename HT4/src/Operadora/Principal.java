@@ -20,7 +20,6 @@ public class Principal {
         Scanner teclado = new Scanner(System.in);
         String file = teclado.nextLine();
         Calculos calc = new Calculos();
-        
         while(decision != 2){
             BufferedReader br = new BufferedReader(new FileReader(file));     
 
@@ -46,7 +45,7 @@ public class Principal {
                         }
                         else
                         {
-                            System.out.println("\n"+calc.operar(everything, entryStack, "")+"\n");                
+                            System.out.println("\n RESULTADO: "+calc.operar(everything, entryStack, "")+"\n");                
                         }
                         break;
                     case "2":
@@ -57,7 +56,7 @@ public class Principal {
                         }
                         else
                         {
-                            System.out.println("\n"+calc.operar(everything, entryStack, "")+"\n");                
+                            System.out.println("\n RESULTADO: "+calc.operar(everything, entryStack, "")+"\n");                
                         }
                         break;
                     case "3":
@@ -74,7 +73,7 @@ public class Principal {
                                 }
                                 else
                                 {
-                                    System.out.println("\n"+calc.operar(everything, entryStack, entryLista)+"\n");
+                                    System.out.println("\n RESULTADO: "+calc.operar(everything, entryStack, entryLista)+"\n");
                                 }
                                 break;
                             case "2":
@@ -85,7 +84,7 @@ public class Principal {
                                 }
                                 else
                                 {
-                                    System.out.println("\n"+calc.operar(everything, entryStack, entryLista)+"\n");
+                                    System.out.println("\n RESULTADO: "+calc.operar(everything, entryStack, entryLista)+"\n");
                                 }
                                 break;
                             case "3":
@@ -96,14 +95,14 @@ public class Principal {
                                 }
                                 else 
                                 {
-                                    System.out.println("\n"+calc.operar(everything, entryStack, entryLista)+"\n");
+                                    System.out.println("\n RESULTADO: "+calc.operar(everything, entryStack, entryLista)+"\n");
                                 }
                                 break;
 
                         }
                 }
 
-                System.out.println("Desea salir?\n 1.No \n2.Si");
+                System.out.println("Desea salir? \n1. No \n2. Si");
                 decision = Integer.parseInt(teclado.nextLine());
 
             }finally{

@@ -2,9 +2,9 @@
 package Operadora;
 
 /**
- * 
+ * Interfaz de las clases tipo Stack
  * @author Ana Lucía Hernández (17138) Diego Sevilla (17238)
- * @param <E>
+ * @param <E> un generico
  */
 public interface iPila<E> 
 {

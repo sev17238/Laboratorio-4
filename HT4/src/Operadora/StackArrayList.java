@@ -4,47 +4,60 @@ package Operadora;
 import java.util.ArrayList;
 
 /**
- *
- * @author anahernandez
+ * Clase que representa la implementacion de arraylist como un stack que extiende a la clase <p>
+ * AbstractStack.
+ * @author Diego Sevilla 17238
+ * @author Ana Lucia Hernandez 17138
+ * @param <E> tipo generico o variable
  */
 public class StackArrayList<E> extends AbstractStack<E>{
     protected ArrayList<E> data;
-
+        /**
+         * post: construye un nuevo stack vacia.
+         */
 	public StackArrayList()
-	// post: constructs a new, empty stack
 	{
 		data = new ArrayList<E>();
 	}
-
+        /**
+         * post: el valor es agregado al stack
+         * @param item el elemento
+         */
     @Override
-	public void push(E item)
-	// post: the value is added to the stack
-	//          will be popped next if no intervening push
-	{
+	public void push(E item)	{
 		data.add(item);
 	}
-
+        /**
+         * pre: el stack no debe estar vacio<p>
+         * post: el item mas recientemente metido al stack se saca primero.
+        */
     @Override
-	public E pop()
-	// pre: stack is not empty
-	// post: most recently pushed item is removed and returned
-	{
+	public E pop()	{
 		return data.remove(size()-1);
 	}
-
+        /**
+         * pre: el stack no esta vacio
+         * post: el valor del tope a ser sacado es returnado
+         * @return el objeto del tope
+         */
     @Override
-	public E peek()
-	// pre: stack is not empty
-	// post: top value (next to be popped) is returned
-	{
+	public E peek()	{
 		return data.get(size() - 1);
 	}
+        /**
+         * post: se retorna el numero de elementos del stack
+         * @return un entero
+         */
     @Override 
     public int size()
     {
         return data.size();
     }
-
+    /**
+     * Metodo que hace los calculos respectivos basados en la linea ingresada como parametro.
+     * @param linea la linea con la operacion postfix
+     * @return el resultado de la operacion en la linea postfix
+     */
     @Override
     public double operar(String linea) {
         double result = 0;    

@@ -7,9 +7,13 @@
 
 package Operadora;
 
+/**Clase que realiza la distribucion de las diferentes implementaciones realizadas<p>
+ * dependiendo de los parametros ingresados.
+ * @author Diego Sevilla 17238
+ * @author AnaLucia Hernandez 17138
+ **/
 
-
-public class Calculos {
+class Calculos {
     static boolean INSTANCE_FLAG = false;
     
     /**
@@ -17,13 +21,21 @@ public class Calculos {
      */
     public Calculos() throws SingletonException
     {
-        
+        if (INSTANCE_FLAG)
+            throw new SingletonException("Solamente puede crear una instancia de Calculos."); 
+        else
+            INSTANCE_FLAG = true; //set flag for 1 instance
+    }
+    
+    public void finalize()
+    {
+        INSTANCE_FLAG = false; //clear if destroyed 
     }
     
     /**
-     * 
+     * Metodo que realiza la distribucion de implementaciones que se usan dependiendo de los <p>
+     * parametros ingresados.
      * @param expresion: String que contiene todos los numerandos y operaciones que se quieren realizar
-     * @param entry: tipo de implementacion que se desea: Pila o Lista
      * @param entryLista: tipo de lista que se desea
      * @param entryStack: tipo de stack que se desea
      * @return el resultado de operar todo lo que dice el string 
